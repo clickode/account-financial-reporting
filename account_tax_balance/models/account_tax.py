@@ -77,7 +77,7 @@ class AccountTax(models.Model):
 
     @api.model
     def _is_unsupported_search_operator(self, operator):
-        return operator != "="
+        return operator != "=" and operator != "in"
 
     @api.model
     def _search_has_moves(self, operator, value):

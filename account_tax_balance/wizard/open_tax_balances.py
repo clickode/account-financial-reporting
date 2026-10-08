@@ -73,7 +73,7 @@ class WizardOpenTaxBalances(models.TransientModel):
             self.env._("%(name)s: %(target)s from %(from)s to %(to)s") % infos
         )
         multi_cpny_grp = self.env.ref("base.group_multi_company")
-        if multi_cpny_grp in self.env.user.groups_id:
+        if multi_cpny_grp in self.env.user.group_ids:
             company_names = self.company_ids.mapped("name")
             vals["name"] = "{} ({})".format(vals["name"], ", ".join(company_names))
         vals["context"] = {

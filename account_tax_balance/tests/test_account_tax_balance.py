@@ -30,7 +30,7 @@ class TestAccountTaxBalance(HttpCase):
                 tracking_disable=True,
             )
         )
-        cls.env.user.groups_id = [(4, cls.env.ref("account.group_account_user").id)]
+        cls.env.user.group_ids = [(4, cls.env.ref("account.group_account_user").id)]
         cls.company = cls.env.user.company_id
         cls.range_type = cls.env["date.range.type"].create(
             {"name": "Fiscal year", "allow_overlap": False}
